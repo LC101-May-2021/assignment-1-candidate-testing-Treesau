@@ -26,7 +26,7 @@ function askQuestions(questions, correctAnswers) {
   return userAnswers;
 }
 
-function gradeQuiz(candidateAnswers, correctAnswers) {
+function gradeQuiz(candidateAnswers) {
   let grade = 0;
   let status = "";
   let numCorrect = 0;
@@ -50,7 +50,7 @@ function runProgram() {
   this.candidateName = askForName();
   this.candidateAnswers = askQuestions(this.questions, this.correctAnswers);
   
-  gradeQuiz(this.candidateAnswers, this.correctAnswers);
+  gradeQuiz(this.candidateAnswers);
 }
 
 // Don't write any code below this line //
