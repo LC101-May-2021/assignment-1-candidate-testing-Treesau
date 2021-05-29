@@ -4,8 +4,8 @@ const input = require('readline-sync');
 
 let candidateName = "";
 let candidateAnswer = "";
-let question = "Who was the first American woman in space?"
-let questions = ["Who was the first American woman in space?", "True or false: 5 kilometer == 5000 meters?", "(5 + 3)/2 * 10 = ?", "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2?", "What is the minimum crew size for the ISS?"];
+let question = "Who was the first American woman in space? "
+let questions = ["Who was the first American woman in space? ", "True or false: 5 kilometer == 5000 meters? ", "(5 + 3)/2 * 10 = ? ", "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", "What is the minimum crew size for the ISS? "];
 let correctAnswer = "Sally Ride"
 let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
 let candidateAnswers = [];
@@ -13,12 +13,13 @@ let candidateAnswers = [];
 
 function askForName() {
   candidateName = input.question("Candidate Name: ");
+  return candidateName;
 }
 
 function askQuestions(questions, correctAnswers) {
   let userAnswers = [];
   for (let i = 0; i < questions.length; i++) {
-    let userAnswer = input.question(i+1 + ") " + questions[i] + "\nYour Answer: ");
+    let userAnswer = input.question(i+1 + ")" + questions[i] + "\nYour Answer: ");
     userAnswers.push(userAnswer);
     console.log(`Correct Answer: ${correctAnswers[i]}\n`);
   }
@@ -46,7 +47,7 @@ function gradeQuiz(candidateAnswers, correctAnswers) {
 }
 
 function runProgram() {
-  askForName();
+  this.candidateName = askForName();
   this.candidateAnswers = askQuestions(this.questions, this.correctAnswers);
   
   gradeQuiz(this.candidateAnswers, this.correctAnswers);
