@@ -16,7 +16,7 @@ function askForName() {
   return candidateName;
 }
 
-function askQuestions(questions, correctAnswers) {
+function askQuestions() {
   let userAnswers = [];
   for (let i = 0; i < questions.length; i++) {
     let userAnswer = input.question(i+1 + ")" + questions[i] + "\nYour Answer: ");
